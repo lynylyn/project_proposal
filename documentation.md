@@ -39,3 +39,88 @@ Existing Idea | Plus | Minus | Implication |
 |Subway Surfers ![Subway Surfers Logo](subsurf.jpg) | Subway Surfers is a great and popular game for reasons such as its variety of skill levels which it can be played with (as the game gradually gets harder, allowing for users with any level of experience to enjoy it). It is fast-paced, and a great take on a running style of platformer. | Issues with Subway Surfers, according to many players who reviewed it, include the constant stream of ads (including unsafe ones). This also causes performance to decrease. | Subway Surfers is also one which inspires 'Elerit Escape'; I intend to include many of the faster-paced aspects, as the purpose is to escape from the enemies which are chasing you (somewhat similar to Subway Surfers). My game won't include ads, which ensures user enjoyment and game performance.
 |Stickman Hook ![Stickman Hook Logo](stickmanhook.jpg)| Stickman Hook is an addicting and very enjoyable small game; its simple, repetitive features and satisfying gameplay allow for an opportunity for users to relax and play something relatively mind-numbing but nonetheless fun. The users are also able to unlock different skins as they move through the game, giving an incentive to keep going. | The simplicity mentioned in the 'plus' section could also be perceived as a negative aspect of Stickman Hook; some people may become bored of it easily as each level has an identical theme and has very similar gameplay. | The satisfying gameplay is something I intend to incorporate in 'Elerit Escape' as it's the main thing that keeps users so hooked on 'Stickman Hook'; I can do this through smooth physics, entertaining animations, and sound effects. By avoiding full simplicity and, as I previously mentioned, focusing on art, I'll ensure users don't get bored whilst playing.
 ### Pseudocode and Flowcharts:
+- #### Movement
+
+![Movement Flowchart](MovementFlowchart.png)
+
+```
+BEGIN Movement
+    INPUT userKeyboard
+    IF 'A' pressed OR left arrow key pressed THEN:
+        Move player left
+    ELIF 'W' pressed OR up arrow key pressed OR space bar pressed THEN:
+        IF player touching ground THEN:
+            Make player jump
+    ELIF 'D' pressed OR right arrow key pressed THEN:
+        Move player right
+END Movement
+```
+- #### Home Page
+
+![Home Flowchart](HomeFlowchart.png)
+
+```
+BEGIN Home
+    INPUT userInput
+    IF 'Shop' clicked THEN:
+        BEGIN Shop
+    ELIF 'Instructions' clicked THEN:
+        BEGIN Instructions
+    ELIF 'Game' clicked THEN:
+        BEGIN Game
+END Home
+```
+
+- #### Shop
+
+![Shop Flowchart](ShopFlowchart.png)
+```
+BEGIN Shop
+    INPUT Item
+    IF itemPrice <= userCurrency THEN:
+        EQUIP Item
+        SET userCurrency to userCurrency - itemPrice
+END Shop
+```
+
+- #### Instructions
+
+![Instructions Flowchart](InstructionsFlowchart.png)
+```
+BEGIN Instructions
+    OUTPUT InstructionManual
+    IF userInput = 'quit':
+END Instructions
+```
+
+- #### Game
+![Game Flowchart](GameFlowchart.png)
+```
+BEGIN Game
+    BEGIN Movement
+    IF player =/ touching enemy THEN:
+        IF player =/ end of level THEN:
+            BEGIN Game
+END Game
+```
+
+### Storyboards:
+Home Page
+![Home Page Storyboard](storyboard.png)
+Assets|Code (Events & Actions)|Animations
+---|---|---
+3 working buttons | Buttons will lead to their corrseponding areas | Buttons should expand  slightly when hovered over
+Background | Background must sit behind everything and scale properly | Background could hypothetically have animations
+Fonts | Fonts must also scale accurately |
+
+Whole game
+![Whole Game Storyboard](FullFlowchart.png)
+Assets|Code (Events & Actions)|Animations
+---|---|---
+Player | Able to move | Walking/running/jumping animations
+Zombies | Chases the player | Walking/running/jumping animations
+Buttons | Able to be clicked | Shrinks
+Boosts/purchasable items | Able to be obtained and utilised | Animation when equipped or purchased
+
+### Time and Action Plan:
+![Gantt Chart](GanttChart.png)
